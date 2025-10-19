@@ -1,4 +1,4 @@
-name: FTP_Deploy_Portfolio
+name: SFTP_Deploy_Portfolio
 
 on:
   push:
@@ -6,21 +6,17 @@ on:
       - main
 
 jobs:
-  ftp-deploy:
+  sftp-deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Sync files via FTP (Passive Mode)
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.6
+      - name: Sync files via SFTP
+        uses: atmoz/sftp-deploy@v1
         with:
-          server: ftp.etanepal.com
-          port: 21
-          username: cicdtest@test.etanepal.com
+          server: etanepal.com
+          username: cicdtest
           password: X9v!qT7r#Lp2Zf
           local-dir: ./
-          server-dir: /home/etanepal/test.etanepal.com/
-          protocol: ftp
-          security: loose
-          passive: true
+          remote-dir: /home/etanepal/test.etanepal.com/
