@@ -12,11 +12,20 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
+      - name: Parse FTP secrets
+        id: parse_secrets
+        run: |
+          echo "FTP_HOST=$(echo '${{ secrets.FTP_Deploy_Portfolio }}' | grep 'FTP_HOST' | awk -F '→' '{print $2}' | xargs)" >> $GITHUB_ENV
+          echo "FTP_USERNAME=$(echo '${{ secrets.FTP_Deploy_Portfolio }}' | grep 'FTP_USERNAME' | awk -F '→' '{print $2}' | xargs)" >> $GITHUB_ENV
+          echo "FTP_PASSWORD=$(echo '${{ secrets.FTP_Deploy_Portfolio }}' | grep 'FTP_PASSWORD' | awk -F '→' '{print $2}' | xargs)" >> $GITHUB_ENV
+          echo "TARGET_DIR=$(echo '${{ secrets.FTP_Deploy_Portfolio }}' | grep 'TARGET_DIR' | awk -F '→' '{print $2}' | xargs)" >> $GITHUB_ENV
+          echo "FTP_PORT=$(echo '${{ secrets.FTP_Deploy_Portfolio }}' | grep 'FTP_PORT' | awk -F '→' '{print $2}' | xargs)" >> $GITHUB_ENV
+
       - name: Sync files via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.6
         with:
-          server: ${{ secrets.FTP_HOST }}:21
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
+          server: ${{ env.FTP_HOST }}:${{ env.FTP_PORT }}
+          username: ${{ env.FTP_USERNAME }}
+          password: ${{ env.FTP_PASSWORD }}
           local-dir: ./
-          server-dir: ${{ secrets.TARGET_DIR }}
+          server-dir: ${{ env.TARGET_DIR }}
