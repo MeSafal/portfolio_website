@@ -97,7 +97,7 @@
       <div class="flex items-center gap-4">
         <div class="w-16 h-16 rounded-xl flex items-center justify-center bg-gradient-to-br from-primary-500 to-accent-500 text-white font-bold shadow-xl">GS</div>
         <div>
-          <h1 class="text-2xl lg:text-3xl font-bold">Mr. Subedi</h1>
+          <h1 class="text-2xl lg:text-3xl font-bold">Mr. Hello</h1>
           <p class="text-primary-400 text-sm font-medium">Full-Stack Developer | Backend Engineer</p>
         </div>
       </div>
