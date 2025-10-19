@@ -21,6 +21,7 @@ jobs:
           password: X9v!qT7r#Lp2Zf
           local-dir: ./
           server-dir: /home/etanepal/test.etanepal.com/
-          protocol: ftps
-          security: loose
-          timeout: 30
+          protocol: ftp
+          security: plain
+          timeout: 60
+
