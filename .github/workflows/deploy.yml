@@ -19,4 +19,4 @@ jobs:
           username: cicdtest@test.etanepal.com
           password: X9v!qT7r#Lp2Zf
           local-dir: /
-          server-dir: /home/etanepal/test.etanepal.com
+          server-dir: /home/etanepal/test.etanepal.com/
