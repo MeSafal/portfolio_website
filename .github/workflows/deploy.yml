@@ -12,11 +12,13 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Sync files via SFTP
-        uses: atmoz/sftp-deploy@v1
+      - name: Deploy via SCP (SFTP over SSH)
+        uses: appleboy/scp-action@v1
         with:
-          server: etanepal.com
+          host: ftp.etanepal.com
           username: cicdtest
           password: X9v!qT7r#Lp2Zf
-          local-dir: ./
-          remote-dir: /home/etanepal/test.etanepal.com/
+          port: 22
+          source: "./*"
+          target: "/home/etanepal/test.etanepal.com/"
+          rm: false
