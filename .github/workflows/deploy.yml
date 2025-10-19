@@ -27,5 +27,5 @@ jobs:
           server: ${{ env.FTP_HOST }}:${{ env.FTP_PORT }}
           username: ${{ env.FTP_USERNAME }}
           password: ${{ env.FTP_PASSWORD }}
-          local-dir: .
+          local-dir: ./
           server-dir: ${{ env.TARGET_DIR }}
