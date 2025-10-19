@@ -16,7 +16,11 @@ jobs:
         uses: SamKirkland/FTP-Deploy-Action@v4.3.6
         with:
           server: ftp.etanepal.com
+          port: 21
           username: cicdtest@test.etanepal.com
-          password: X9v!qT7r#Lp2Zf
+          password: ${{ secrets.FTP_PASSWORD }}
           local-dir: ./
           server-dir: /home/etanepal/test.etanepal.com/
+          protocol: ftps
+          secure: true
+          git-ftp-args: --insecure
