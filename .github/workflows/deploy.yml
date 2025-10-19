@@ -18,9 +18,9 @@ jobs:
           server: ftp.etanepal.com
           port: 21
           username: cicdtest@test.etanepal.com
-          password: ${{ secrets.FTP_PASSWORD }}
+          password: X9v!qT7r#Lp2Zf
           local-dir: ./
           server-dir: /home/etanepal/test.etanepal.com/
           protocol: ftps
-          secure: true
-          git-ftp-args: --insecure
+          security: explicit
+          timeout: 30
