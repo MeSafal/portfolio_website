@@ -22,5 +22,5 @@ jobs:
           local-dir: ./
           server-dir: /home/etanepal/test.etanepal.com/
           protocol: ftps
-          security: explicit
+          security: loose
           timeout: 30
