@@ -15,7 +15,7 @@ jobs:
       - name: Sync files via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.6
         with:
-          server: ftp.etanepal.com:21
+          server: ftp.etanepal.com
           username: cicdtest@test.etanepal.com
           password: X9v!qT7r#Lp2Zf
           local-dir: ./
