@@ -22,5 +22,4 @@ jobs:
           local-dir: ./
           server-dir: /home/etanepal/test.etanepal.com/
           protocol: ftp
-          security: loose
-
+          security: plain
